@@ -1092,6 +1092,7 @@ function createStage01 () {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
     controller.moveSprite(mySprite)
     scene.cameraFollowSprite(mySprite)
+    game.splash("正しい数を答えよ！")
     info.startCountdown(20)
 }
 function removeStage03 () {
@@ -1358,6 +1359,13 @@ function removeOpening () {
         `)
     mySprite.destroy()
 }
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, function (sprite, location) {
+    if (currentStageNo == 3) {
+        stage2OrbCount += 1
+        mySprite.say("オーブ" + stage2OrbCount + "個目!", 1000)
+        tiles.setTileAt(location, sprites.dungeon.darkGroundSouthEast1)
+    }
+})
 sprites.onCreated(SpriteKind.EnemyFromRight, function (sprite) {
     if (currentStageNo == 6) {
         sprite.setVelocity(-80, 0)
@@ -1449,7 +1457,7 @@ function createStage02 () {
         tiles.setTileAt(value4, sprites.builtin.forestTiles8)
     }
     tiles.placeOnTile(enemySpriteList[0], tiles.getTileLocation(11, 14))
-    tiles.placeOnTile(enemySpriteList[1], tiles.getTileLocation(6, 8))
+    tiles.placeOnTile(enemySpriteList[1], tiles.getTileLocation(1, 8))
     mySprite = sprites.create(img`
         . . . . . f f 4 4 f f . . . . . 
         . . . . f 5 4 5 5 4 5 f . . . . 
@@ -1471,7 +1479,9 @@ function createStage02 () {
     controller.moveSprite(mySprite)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
     scene.cameraFollowSprite(mySprite)
-    info.startCountdown(20)
+    stage2OrbCount = 0
+    game.splash("隠されたオーブを", "GETしてすすめ！")
+    info.startCountdown(40)
 }
 function createStage05 () {
     tiles.loadMap(tiles.createMap(tilemap`level_25`))
@@ -1779,34 +1789,23 @@ function pushAStage01 () {
     for (let index2 = 0; index2 <= 2; index2++) {
         if (mySprite.overlapsWith(enemySpriteList[index2])) {
             console.log(index2)
+            correctAnsVal = 0
             if (index2 == 0) {
-                game.splash("おかね を英語にすると？")
-                if (game.askForString("") == "money") {
-                    music.baDing.play()
-                    enemySpriteList[index2].setFlag(SpriteFlag.Ghost, true)
-                    tiles.setWallAt(wallPosList[index2], false)
-                    tiles.setTileAt(wallPosList[index2], sprites.castle.tilePath5)
-                } else {
-                    music.powerDown.play()
-                }
+                game.splash("亀の足の数＋クモの足の数", "＋蛇の足の数は？")
+                correctAnsVal = 10
             } else if (index2 == 1) {
-                game.splash("1から100をたしざんすると？")
-                if (game.askForNumber("") == 5050) {
-                    music.baDing.play()
-                    tiles.setWallAt(wallPosList[index2], false)
-                    tiles.setTileAt(wallPosList[index2], sprites.castle.tilePath5)
-                } else {
-                    music.powerDown.play()
-                }
+                game.splash("1から100を", "たしざんすると？")
+                correctAnsVal = 5050
             } else {
                 game.splash("1+2+3+4+5+6は？")
-                if (game.askForNumber("") == 21) {
-                    music.baDing.play()
-                    tiles.setWallAt(wallPosList[index2], false)
-                    tiles.setTileAt(wallPosList[index2], sprites.castle.tilePath5)
-                } else {
-                    music.powerDown.play()
-                }
+                correctAnsVal = 21
+            }
+            if (game.askForNumber("") == correctAnsVal) {
+                music.baDing.play()
+                tiles.setWallAt(wallPosList[index2], false)
+                tiles.setTileAt(wallPosList[index2], sprites.castle.tilePath5)
+            } else {
+                music.powerDown.play()
             }
         }
     }
@@ -2415,20 +2414,24 @@ function createEnding () {
 function pushAStage02 () {
     for (let index32 = 0; index32 <= 1; index32++) {
         if (mySprite.overlapsWith(enemySpriteList[index32])) {
-            currectAnsText = ""
             if (index32 == 0) {
-                game.splash("日本でいちばん高い山は？Mt.●●●●")
-                currectAnsText = "fuji"
+                if (stage2OrbCount >= 5) {
+                    game.splash("通ってよし！")
+                    music.baDing.play()
+                    tiles.setWallAt(wallPosList[index32], false)
+                    tiles.setTileAt(wallPosList[index32], sprites.dungeon.darkGroundCenter)
+                } else {
+                    game.splash("オーブの数が足りないぞ", "５個以上もってこい")
+                }
             } else {
-                game.splash("「今日」は英語で？")
-                currectAnsText = "today"
-            }
-            if (game.askForString("") == currectAnsText) {
-                music.baDing.play()
-                tiles.setWallAt(wallPosList[index32], false)
-                tiles.setTileAt(wallPosList[index32], sprites.dungeon.darkGroundCenter)
-            } else {
-                music.powerDown.play()
+                if (stage2OrbCount >= 7) {
+                    game.splash("通ってよし！")
+                    music.baDing.play()
+                    tiles.setWallAt(wallPosList[index32], false)
+                    tiles.setTileAt(wallPosList[index32], sprites.dungeon.darkGroundCenter)
+                } else {
+                    game.splash("オーブの数が足りないぞ", "７個以上もってこい")
+                }
             }
         }
     }
@@ -2708,11 +2711,12 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
     }
 })
 let EndingTextList: TextSprite[] = []
-let currectAnsText = ""
 let dragonSprite: Sprite = null
 let kiganSprite: Sprite = null
 let titleSpriteList: TextSprite[] = []
+let correctAnsVal = 0
 let stage4FloorSwitch = 0
+let stage2OrbCount = 0
 let myYPos = 0
 let myXPos = 0
 let mySprite: Sprite = null

@@ -289,14 +289,17 @@
     "level_24": {
         "id": "level_24",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxMDAwMTAwMDAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMjAyMDIwMjA1MDQwNDA0MDQwNDA0MDQwNDA0MDMwMzAyMDIwMjAyMDMwMzAzMDMwMzAzMDMwMzAzMDQwMzAzMDIwMjAyMDIwMzAzMDMwMzAzMDMwMzAzMDMwNDAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzA0MDMwMzAyMDIwMjAyMDIwMTAzMDMwMzAzMDMwMzAzMDQwMzAzMDIwMjAyMDIwMjAyMDMwMjAyMDIwMjAyMDIwMjAzMDMwMjAzMDMwMzAzMDMwMzAzMDMwMzAyMDIwMjAyMDMwMzAyMDIwMjAyMDIwMjAzMDMwMzAzMDIwMjAyMDIwMzAzMDIwMjAyMDIwMjAyMDMwMzAzMDMwMjAyMDIwMjAzMDMwMjAyMDIwMjAyMDIwMzAzMDMwMzAyMDIwMjAyMDMwMzAyMDIwMjAyMDIwMjAzMDMwMzAzMDIwMjAyMDIwMzAzMDIwMzAzMDMwMzAzMDMwMzAzMDMwMjAyMDIwMjAzMDMwMjAzMDMwMzAzMDMwMzAzMDMwMzAyMDIwMjAyMDMwMzAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMjIyMjIyMjIyMjIyMjIyMjAyMDAwMDAwMDAwMDAwMjAwMjAwMjAyMjIyMjIyMjIwMDIwMDIwMjIyMjIyMjIyMDIyMjIyMjIyMjIyMjIyMjAwMjAwMDAyMDIyMjIyMjIwMDIwMDAwMjAwMDAwMDAyMDAyMjIyMjIyMjIwMjAwMjAwMjAwMDAyMDIyMDIwMDIwMDIwMDAwMjAyMjAyMDAyMDAyMDAwMDIwMjIwMjAwMjAwMjAwMDAyMDIyMDIwMDIwMDIyMjIyMjIyMjAyMDAyMDAyMjIyMjIyMjIwMjAwMjAwMjAwMDAwMDAwMDAwMDIwMjIyMjIyMjIyMjIyMjIyMg==",
+        "data": "MTAxMDAwMTAwMDAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMjAyMDIwMjA1MDQwNDA0MDIwNjAyMDUwNTA1MDMwMzAyMDIwMjAyMDMwMzAzMDMwMzAzMDMwMzAzMDQwMzAzMDYwMjAyMDIwMjAyMDIwMjAyMDgwODA4MDMwNjAzMDMwMzAzMDMwMzAzMDMwMzAyMDIwMzAzMDgwMzAzMDMwMzAyMDIwMjAyMDIwMTAzMDMwMjAyMDMwODAzMDIwMzAzMDIwMzAzMDMwMzAzMDgwODAyMDIwMzAyMDIwMjAzMDMwMjAzMDMwNjA3MDgwODAzMDMwMzAzMDIwMjAyMDMwMzAyMDMwMzAzMDMwMzAzMDMwMzA2MDMwMzAzMDIwMzAzMDIwMjAyMDIwMjAyMDgwODA4MDgwMzAyMDIwMjAzMDMwMzAzMDMwMzAzMDIwMzAzMDMwMzAzMDIwMzAzMDMwMzAzMDMwMzAzMDMwMjAzMDYwMzA4MDgwMjAyMDIwMzAzMDgwODA4MDcwNzA3MDMwODA4MDgwMzAzMDMwMjAzMDMwODAzMDMwNzA3MDcwMzAzMDMwMzAzMDMwMjAyMDMwMzA4MDYwMzA3MDcwNzA3MDcwNzA3MDIwMjAyMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMjIyMjIyMjIyMjIyMjIyMjAyMDAwMDAwMDAwMDAwMjAwMjAwMjAyMjIyMjIyMjIwMDIwMDAwMDAwMDAwMjAyMDIyMjIyMjIyMDAyMjIwMjIwMjAwMDAyMDAyMjAyMDIwMDIyMjIyMDIwMDIwMDAyMDAyMjIwMDAwMjIyMjAwMjAwMjIyMjIyMjIyMjAyMjIwMDIwMDAwMDAwMDIwMDAyMDIyMjIyMjIwMjIyMjIwMjIyMjIyMjIyMDIwMDAwMDIwMDIwMDAwMjAwMDIwMjIyMDAyMjIwMDIwMjIyMjAyMjAwMjIwMDAwMDAwMDAwMDIyMjIyMjIyMjIyMjIyMjIyMg==",
         "tileset": [
             "myTiles.transparency16",
             "sprites.dungeon.stairLarge",
             "sprites.dungeon.darkGroundCenter",
             "sprites.dungeon.floorLight0",
             "sprites.dungeon.floorDark3",
-            "sprites.dungeon.floorLightMoss"
+            "sprites.dungeon.floorLightMoss",
+            "sprites.dungeon.collectibleBlueCrystal",
+            "sprites.dungeon.darkGroundSouthWest1",
+            "sprites.dungeon.floorLight1"
         ]
     },
     "level_25": {
