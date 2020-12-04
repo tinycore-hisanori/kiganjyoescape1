@@ -1,7 +1,9 @@
  
 
 
-> Open this page at [https://tinycore-hisanori.github.io/kiganjyoescape1/](https://tinycore-hisanori.github.io/kiganjyoescape1/)
+> Open this page at [https://tinycore-hisanori.github.io/kiganjyoescape1/?date=202012050456
+](https://tinycore-hisanori.github.io/kiganjyoescape1/?date=202012050456
+)
 
 ## Use as Extension
 
